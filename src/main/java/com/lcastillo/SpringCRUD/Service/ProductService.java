@@ -32,4 +32,8 @@ public class ProductService {
         productCrud.insertProduct(pro);
     }
     
+    public void updateProduct(Product pro) {
+        productCrud.updateProduct(pro);
+    }
+    
 }

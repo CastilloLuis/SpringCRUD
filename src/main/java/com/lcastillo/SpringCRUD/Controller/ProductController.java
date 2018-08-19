@@ -23,12 +23,9 @@ public class ProductController {
     
     private ProductService productService;
     
-    @RequestMapping("/products")
-    public int helloWorld() {
-        System.out.print("hola");
-                Random rand = new Random();
-        int id = rand.nextInt((151684 - 4) + 1) + 4;
-        return id;
+    @RequestMapping("/helloworld")
+    public String helloWorld() {
+        return "Hello world from a Spring Controller :)";
     }
     
     @RequestMapping(value="/getAllProducts", method = RequestMethod.GET)
@@ -39,6 +36,12 @@ public class ProductController {
     @RequestMapping(value="/insertProduct", method = RequestMethod.POST)
     public void insertProduct(@RequestBody Product pro) {
         productService.insertProduct(pro);
+    }
+    
+    @RequestMapping(value="/updateProduct", method = RequestMethod.POST)
+    public void updateProduct(@RequestBody Product pro) {
+        System.out.println(pro);
+        productService.updateProduct(pro);
     }
     
 }

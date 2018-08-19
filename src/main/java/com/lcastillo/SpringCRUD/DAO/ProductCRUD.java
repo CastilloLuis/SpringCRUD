@@ -40,7 +40,7 @@ public class ProductCRUD implements ProductCRUDInterface {
     @Override
     public void insertProduct(Product pro) {
         try {
-            products.put(this.helpers.generateId(), pro);
+            products.put(pro.getId(), pro);
             this.getAllProducts();
         } catch (Exception e) {
             System.out.println("Error while inserting product" + e);
@@ -49,7 +49,21 @@ public class ProductCRUD implements ProductCRUDInterface {
 
     @Override
     public void updateProduct(Product pro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            Product p = products.get(pro.getId());
+                p.setProd_available(true);
+                p.setProd_description(pro.getProd_description());
+                p.setProd_name(pro.getProd_name());
+                p.setProd_description(pro.getProd_description());
+                p.setProd_price(pro.getProd_price());
+                p.setProd_quantity(pro.getProd_quantity());
+                System.out.println(pro.getId());
+            products.put(pro.getId(), pro);
+        } catch (Exception e) {
+            System.out.println(pro.getId());
+            System.out.println("Error while updating product -> " + e);
+        }
+
     }
 
     @Override
