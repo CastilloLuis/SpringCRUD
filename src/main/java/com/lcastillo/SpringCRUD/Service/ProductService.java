@@ -40,4 +40,8 @@ public class ProductService {
         productCrud.deleteProduct(pro_id);
     }
     
+    public Product getProductById(int id) {
+        return productCrud.getProductById(id);
+    }
+    
 }

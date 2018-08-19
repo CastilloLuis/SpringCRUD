@@ -28,25 +28,30 @@ public class ProductController {
         return "Hello world from a Spring Controller :)";
     }
     
-    @RequestMapping(value="/getAllProducts", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllProducts", method = RequestMethod.GET)
     public Collection<Product> getAllProducts() {
         return productService.getAllProducts();
     }
     
-    @RequestMapping(value="/insertProduct", method = RequestMethod.POST)
+    @RequestMapping(value = "/insertProduct", method = RequestMethod.POST)
     public void insertProduct(@RequestBody Product pro) {
         productService.insertProduct(pro);
     }
     
-    @RequestMapping(value="/updateProduct", method = RequestMethod.PUT)
+    @RequestMapping(value = "/updateProduct", method = RequestMethod.PUT)
     public void updateProduct(@RequestBody Product pro) {
         System.out.println(pro);
         productService.updateProduct(pro);
     }
     
-    @RequestMapping(value="/deleteProduct/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteProduct/{id}", method = RequestMethod.DELETE)
     public void deleteProduct(@PathVariable("id") int id) {
         productService.deleteProduct(id);
+    }
+    
+    @RequestMapping(value = "/getProduct/{id}", method = RequestMethod.GET)
+    public Product getProductById(@PathVariable("id") int id) {
+        return productService.getProductById(id);
     }
     
 }

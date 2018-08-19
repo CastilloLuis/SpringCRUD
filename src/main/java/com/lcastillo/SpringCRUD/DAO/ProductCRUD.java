@@ -77,7 +77,7 @@ public class ProductCRUD implements ProductCRUDInterface {
 
     @Override
     public Product getProductById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return products.get(id);
     }
     
 }
