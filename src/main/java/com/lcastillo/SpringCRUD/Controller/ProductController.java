@@ -37,9 +37,8 @@ public class ProductController {
     }
     
     @RequestMapping(value="/insertProduct", method = RequestMethod.POST)
-    public Product insertProduct(@RequestBody Product pro) {
-        return pro;
-        //productService.insertProduct(pro);
+    public void insertProduct(@RequestBody Product pro) {
+        productService.insertProduct(pro);
     }
     
 }
