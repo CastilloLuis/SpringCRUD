@@ -36,4 +36,8 @@ public class ProductService {
         productCrud.updateProduct(pro);
     }
     
+    public void deleteProduct(int pro_id) {
+        productCrud.deleteProduct(pro_id);
+    }
+    
 }

@@ -38,10 +38,15 @@ public class ProductController {
         productService.insertProduct(pro);
     }
     
-    @RequestMapping(value="/updateProduct", method = RequestMethod.POST)
+    @RequestMapping(value="/updateProduct", method = RequestMethod.PUT)
     public void updateProduct(@RequestBody Product pro) {
         System.out.println(pro);
         productService.updateProduct(pro);
+    }
+    
+    @RequestMapping(value="/deleteProduct/{id}", method = RequestMethod.DELETE)
+    public void deleteProduct(@PathVariable("id") int id) {
+        productService.deleteProduct(id);
     }
     
 }

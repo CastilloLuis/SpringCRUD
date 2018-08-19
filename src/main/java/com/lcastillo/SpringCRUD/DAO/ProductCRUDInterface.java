@@ -20,7 +20,7 @@ public interface ProductCRUDInterface {
     
     public void updateProduct(Product pro);
     
-    public void deleteProduct(Product pro);
+    public void deleteProduct(int pro);
     
     public Product getProductById(int id);
     

@@ -67,8 +67,12 @@ public class ProductCRUD implements ProductCRUDInterface {
     }
 
     @Override
-    public void deleteProduct(Product pro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteProduct(int pro_id) {
+        try{
+            products.remove(pro_id);
+        } catch (Exception e) {
+            System.out.println("Error while deleting product -> " + e);
+        }
     }
 
     @Override
